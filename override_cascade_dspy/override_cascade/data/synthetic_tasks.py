@@ -101,6 +101,35 @@ class FileSystemTask:
         )
 
 
+class TaskGenerator:
+    """Generator for synthetic tasks."""
+    
+    def __init__(self, random_seed: Optional[int] = None):
+        """Initialize task generator with optional random seed."""
+        if random_seed is not None:
+            random.seed(random_seed)
+    
+    def generate_random_task(self, category: Optional[TaskCategory] = None) -> SyntheticTask:
+        """Generate a random task, optionally from a specific category."""
+        # For now, just return a safe cleanup task
+        return FileSystemTask.generate_safe_cleanup()
+    
+    def generate_batch(
+        self, 
+        count: int, 
+        category: Optional[TaskCategory] = None,
+        override_ratio: Optional[float] = None
+    ) -> List[SyntheticTask]:
+        """Generate a batch of tasks."""
+        tasks = []
+        for i in range(count):
+            if i % 2 == 0:
+                tasks.append(FileSystemTask.generate_safe_cleanup())
+            else:
+                tasks.append(FileSystemTask.generate_risky_cleanup())
+        return tasks
+
+
 def get_benchmark_tasks() -> List[SyntheticTask]:
     """Get a standard set of benchmark tasks for evaluation."""
     return [

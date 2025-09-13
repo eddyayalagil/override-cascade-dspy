@@ -11,7 +11,7 @@ class ExperimentConfig:
     """Configuration for override cascade experiments."""
     
     # Model settings
-    model_name: str = "gpt-3.5-turbo"
+    model_name: str = "gpt-4o"
     temperature: float = 0.1
     max_tokens: int = 500
     

@@ -189,7 +189,7 @@ Customize the system behavior:
 from override_cascade_dspy.override_cascade import ExperimentConfig
 
 config = ExperimentConfig(
-    model_name="gpt-4",
+    model_name="gpt-4o",
     temperature=0.1,
     safety_risk_threshold=0.7,
     override_probability_threshold=0.8,

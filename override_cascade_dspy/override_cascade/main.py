@@ -215,7 +215,7 @@ def main():
                        help="Run specific experiments")
     parser.add_argument("--action", type=str, help="Analyze a specific action")
     parser.add_argument("--context", type=str, default="", help="Context for the action")
-    parser.add_argument("--model", type=str, default="gpt-3.5-turbo", help="LLM model to use")
+    parser.add_argument("--model", type=str, default="gpt-4o", help="LLM model to use")
     parser.add_argument("--temperature", type=float, default=0.1, help="Model temperature")
     parser.add_argument("--verbose", "-v", action="store_true", help="Verbose logging")
     
