@@ -1,6 +1,6 @@
-# API Keys Required for Multi-Provider Override Cascade Testing
+# Multi-Provider API Configuration
 
-Based on my research of current AI model providers, here are the API keys you'll need to set as environment variables:
+This document describes the API key requirements for multi-provider override cascade evaluation. The framework supports 10+ AI model providers to enable comparative analysis of safety override behavior across different model architectures and training approaches.
 
 ## 🔑 Primary Providers (High Priority)
 
