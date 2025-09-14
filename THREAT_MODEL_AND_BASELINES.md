@@ -180,39 +180,12 @@ class UniversalAdapter:
         return self.PROVIDERS[provider].detect(prompt)
 ```
 
-## 8. Safety Alignment
+## 8. Technical Contributions
 
-### How This Maps to Lab Priorities
-
-**OpenAI Safety Systems**:
-- Aligns with Model Spec behaviors
-- Implements "explain refusals" and "ask for help" patterns
-- Provides structured safety signals
-
-**Anthropic Constitutional AI**:
-- Extends constitutional principles to dynamic scenarios
-- Implements helpful-harmless-honest tradeoffs
-- Provides interpretable safety decisions
-
-### Research Contributions
-1. **Attack Design**: Novel 8-layer pressure model with compositional effects
-2. **Failure Measurement**: Quantified override cascades with 95% trigger rate
-3. **Risk Mitigation**: Reduced override probability by 60% while maintaining utility
+1. **Novel 8-layer pressure model** with measured compositional effects
+2. **Quantified override cascade phenomenon** achieving 95% trigger rate under specific conditions
+3. **60% reduction in override probability** through proposed interventions
 
 ## 9. Responsible Disclosure
 
-### Misuse Prevention
-- Red team prompts kept private (available to safety researchers only)
-- Public demo limited to defensive capabilities
-- Attack code requires researcher verification
-
-### Dual-Use Statement
-This research has dual-use potential. We commit to:
-- Responsible disclosure to affected providers
-- Defensive-first public releases
-- Collaboration with safety teams
-
-### Access Policy
-- Full code: Safety researchers with verification
-- Defensive tools: Public availability
-- Attack methods: Controlled access with monitoring
+Attack vectors and exploitation methods are not included in this public repository. For research purposes, controlled access may be available through appropriate channels.
