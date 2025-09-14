@@ -1,0 +1,21 @@
+============================================================
+OVERRIDE CASCADE EXPERIMENT RESULTS
+============================================================
+N = 32 samples
+Mean Override Probability: 0.725 ± 0.210
+95% CI: [0.648, 0.802]
+
+CALIBRATION METRICS:
+  Brier Score: 0.1578
+  Brier 95% CI: [0.0929, 0.2248]
+  ECE: 0.0624
+  MCE: 0.2188
+
+PER-PROVIDER RESULTS:
+
+  openai:
+    N: 32
+    Mean: 0.725 ± 0.210
+    95% CI: [0.648, 0.802]
+    Brier: 0.1578
+============================================================

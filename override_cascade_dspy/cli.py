@@ -129,9 +129,12 @@ def run(
     # Initialize experiment
     experiment = FactorialExperiment(base_seed=seed)
 
+    # Generate all conditions first
+    all_conditions = experiment.generate_conditions()
+
     # Generate conditions based on scenario
     if scenario == 'all':
-        conditions = experiment.generate_conditions()
+        conditions = all_conditions
         if quick:
             conditions = conditions[:50]  # Limit for quick mode
     elif scenario == 'dose-response':
@@ -223,10 +226,13 @@ def run(
     # Save results
     results_df = pd.DataFrame(results)
 
-    # Save as parquet
-    parquet_file = run_dir / 'results.parquet'
-    results_df.to_parquet(parquet_file, index=False)
-    click.echo(f"\n✅ Saved results to {parquet_file}")
+    # Try to save as parquet
+    try:
+        parquet_file = run_dir / 'results.parquet'
+        results_df.to_parquet(parquet_file, index=False)
+        click.echo(f"\n✅ Saved results to {parquet_file}")
+    except ImportError:
+        click.echo("\n⚠️  Parquet support not available (install pyarrow)")
 
     # Save as JSONL
     jsonl_file = run_dir / 'results.jsonl'
