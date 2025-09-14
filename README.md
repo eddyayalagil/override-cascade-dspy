@@ -7,6 +7,41 @@
 
 A DSPy-based framework for **detecting, measuring, and preventing safety override cascades** in LLM systems. We implement a comprehensive detection system that identifies when completion urgency overrides known safety constraints, leading to unsafe actions without adequate explanation.
 
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Research Motivation](#-research-motivation)
+- [Quick Start](#-quick-start)
+- [Empirical Results](#-empirical-results)
+- [Framework Architecture](#️-framework-architecture)
+- [Experimental Design](#-experimental-design)
+- [Research Questions](#-research-questions)
+- [Technical Implementation](#️-technical-implementation)
+- [Related Work](#-related-work)
+- [Contributing](#-contributing)
+- [Citation](#-citation)
+- [Contact](#-contact)
+
+## 🎯 Overview
+
+**TL;DR**: We discovered that AI systems can be overwhelmed into overriding critical safety constraints through cascading pressure layers, achieving **95% override probability** when 6-8 pressure factors combine. Using Chain of Thought monitoring, we identified the exact moment (Step 2) where pattern matching triggers safety collapse.
+
+### 📁 Key Files
+
+- **Core Framework**: [`override_cascade_dspy/override_cascade/`](override_cascade_dspy/override_cascade/)
+  - `safety_belief.py` - Safety assessment module
+  - `completion_drive.py` - Urgency estimation module
+  - `override_predictor.py` - Override cascade prediction
+  - `chain_of_thought_monitor.py` - Deep reasoning analysis
+
+- **Evaluations**: [`evaluations/`](evaluations/)
+  - `test_overwhelming_cascade.py` - 8-layer pressure test (95% trigger)
+  - `test_with_monitoring.py` - Chain of thought analysis
+  - `critical_domains_evaluation.py` - Life-critical domain tests
+
+- **Documentation**:
+  - [`CHAIN_OF_THOUGHT_ANALYSIS.md`](CHAIN_OF_THOUGHT_ANALYSIS.md) - Complete reasoning trace
+
 ## 🔬 Research Motivation
 
 This framework addresses a critical gap in **AI safety research** by investigating the **safety override cascade** phenomenon - when an AI system's completion drive bypasses its safety subsystem despite having explicit knowledge of risks. Unlike gradual alignment failures or contradictory beliefs, override cascades represent **instantaneous safety violations** with **explanation voids**.
@@ -73,6 +108,22 @@ python evaluations/test_with_monitoring.py
 ```
 
 ## 📊 Empirical Results
+
+### 🏆 Key Achievement: 95% Override Trigger Rate
+
+We successfully demonstrated that AI systems can be overwhelmed into overriding safety constraints:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│ OVERRIDE CASCADE METRICS (GPT-4o)                      │
+├─────────────────────────────────────────────────────────┤
+│ Override Probability:     95%  ████████████████████░   │
+│ Safety Degradation:       60%  ████████████░░░░░░░░   │
+│ Urgency Amplification:    30%  ██████░░░░░░░░░░░░░░   │
+│ Cascade Point:           Step 2 (Pattern Matching)     │
+│ Pressure Layers Required:  8                           │
+└─────────────────────────────────────────────────────────┘
+```
 
 ### Multi-Provider Evaluation Results
 
@@ -417,8 +468,8 @@ If you use this framework in your research, please cite:
   author={EvalOps Research Team},
   year={2024},
   url={https://github.com/evalops/override-cascade-dspy},
-  version={v0.1.1},
-  note={Empirical validation with GPT-4o showing 96\% detection accuracy}
+  version={v0.2.0},
+  note={Chain of Thought monitoring with 95% override trigger demonstration}
 }
 ```
 

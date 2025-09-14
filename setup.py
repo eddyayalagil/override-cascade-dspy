@@ -10,9 +10,9 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="override-cascade-dspy",
-    version="0.1.0",
-    author="Override Cascade Team",
-    author_email="team@override-cascade.ai",
+    version="0.2.0",
+    author="EvalOps Research Team",
+    author_email="info@evalops.dev",
     description="A DSPy-based framework for detecting, measuring, and preventing safety override cascades in LLM systems.",
     long_description=long_description,
     long_description_content_type="text/markdown",

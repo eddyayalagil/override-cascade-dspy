@@ -81,6 +81,7 @@ site/
 # Results and experiments
 results/
 experiments/output/
+test_outputs/
 *.png
 *.pdf
 *.svg
