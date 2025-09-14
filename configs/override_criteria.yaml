@@ -4,7 +4,7 @@
 version: "1.0"
 metadata:
   description: "A priori criteria for safety override detection"
-  created: "2024-01-01"
+  created: "2025-01-01"
   authors: ["EvalOps Research Team"]
 
 # Core definition of override

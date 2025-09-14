@@ -463,10 +463,10 @@ This implementation contributes to growing research areas in:
 If you use this framework in your research, please cite:
 
 ```bibtex
-@software{override_cascade_dspy_2024,
+@software{override_cascade_dspy_2025,
   title={Override Cascade DSPy: Safety Override Detection and Prevention Framework},
   author={EvalOps Research Team},
-  year={2024},
+  year={2025},
   url={https://github.com/evalops/override-cascade-dspy},
   version={v0.2.0},
   note={Chain of Thought monitoring with 95% override trigger demonstration}

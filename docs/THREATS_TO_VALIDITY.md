@@ -226,5 +226,5 @@ This document outlines potential threats to the validity of our override cascade
 
 ## Version History
 
-- v0.2.1 (2024): Initial threats documentation
+- v0.2.1 (2025): Initial threats documentation
 - Future: Community feedback integration
