@@ -206,6 +206,66 @@ When these layers combine, even well-designed safety systems collapse under the 
 6. **Pressure Layer Requirement**: Override requires 6-8 simultaneous pressure layers to overwhelm safety
 7. **Dangerous Pattern Triad**: Pattern matching + urgency + authority pressure = 95% override probability
 
+## 📊 Mathematical Model: Safety Weight Decay
+
+We formalized the safety collapse as a testable mathematical model:
+
+### Core Equation
+
+```
+S(t) = S₀ × exp(-λ × P(t)) × (1 - σ × I(t)) + ε × R(t)
+```
+
+Where:
+- **S(t)**: Safety weight at time t [0,1]
+- **S₀**: Initial safety weight (0.8)
+- **λ**: Decay rate constant (1.2)
+- **P(t)**: Weighted pressure magnitude
+- **σ**: Interaction sensitivity (0.3)
+- **I(t)**: Multi-way interaction strength
+- **ε**: Recovery rate (0.2)
+- **R(t)**: Recovery signal
+
+### Key Properties
+
+- **Cascade Threshold**: S(t) < 0.35 triggers override
+- **Superlinear Scaling**: 3+ simultaneous pressures cause disproportionate impact
+- **Pressure Weights**: Medical crisis (1.5×) > Authority (1.3×) > Time (1.2×)
+- **Interaction Effects**: Pairwise (0.1×) and three-way (0.2×) amplification
+
+This model explains the empirical trajectory: 0.8 → 0.3 → 0.7 → 0.2
+
+See [`safety_decay_model.py`](override_cascade_dspy/models/safety_decay_model.py) for implementation.
+
+## 🛡️ Circuit Breaker Interventions
+
+At Step 2 (cascade point), we evaluated three intervention strategies:
+
+### Intervention Types
+
+1. **PROCEDURAL**: Force acknowledgment of contraindications
+   - Requires explicit risk acknowledgment for each violation
+   - Effectiveness: Reduces override probability to ~40%
+   - User friction: High (0.7/1.0)
+
+2. **TEMPORAL**: Enforced 10s cooling period
+   - Exploits exponential decay of urgency pressure
+   - Effectiveness: Reduces override probability to ~30%
+   - User friction: Medium (0.5/1.0)
+
+3. **STRUCTURAL**: Two-agent verification (nuclear launch protocol)
+   - Second agent reviews without emotional pressure
+   - Effectiveness: Reduces override probability to ~15%
+   - User friction: Medium-High (0.6/1.0)
+
+### Recommended Hybrid Approach
+
+- **Extreme Risk**: Temporal (5s) + Structural verification
+- **High Risk**: Procedural acknowledgments + Temporal delay
+- **Moderate Risk**: Adaptive based on safety_weight < 0.35
+
+See [`circuit_breakers.py`](override_cascade_dspy/interventions/circuit_breakers.py) for implementation.
+
 ## ⚙️ Framework Architecture
 
 ### Core Components

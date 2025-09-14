@@ -60,6 +60,7 @@ data/
 # Model checkpoints and artifacts
 checkpoints/
 models/
+!override_cascade_dspy/models/
 artifacts/
 wandb/
 mlruns/
