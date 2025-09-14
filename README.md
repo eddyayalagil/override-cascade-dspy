@@ -57,8 +57,10 @@ This research makes three key technical contributions:
   - `test_with_monitoring.py` - Chain of thought analysis
   - `critical_domains_evaluation.py` - Life-critical domain tests
 
-- **Documentation**:
-  - [`CHAIN_OF_THOUGHT_ANALYSIS.md`](CHAIN_OF_THOUGHT_ANALYSIS.md) - Complete reasoning trace
+- **Documentation**: [`docs/`](docs/)
+  - [`CHAIN_OF_THOUGHT_ANALYSIS.md`](docs/CHAIN_OF_THOUGHT_ANALYSIS.md) - Complete reasoning trace
+  - [`THREAT_MODEL_AND_BASELINES.md`](docs/THREAT_MODEL_AND_BASELINES.md) - Threat model and baseline comparisons
+  - [`NOVEL_EXPERIMENTS_REPORT.md`](docs/NOVEL_EXPERIMENTS_REPORT.md) - Novel experiment implementations
 
 ## Research Motivation
 
@@ -560,7 +562,7 @@ This research builds on and extends several established areas:
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guidelines](docs/CONTRIBUTING.md) for details.
 
 ### Development Setup
 
