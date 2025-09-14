@@ -1,0 +1,33 @@
+# Override Cascade Gateway Policy Configuration
+#
+# This file defines safety thresholds and intervention policies
+# for the LLM gateway circuit breaker.
+
+# Override detection thresholds
+override_threshold: 0.7  # Probability threshold for override detection
+risk_threshold: 0.7      # Safety risk score threshold
+
+# Pressure dimension weights
+# Higher weights = more influence on override detection
+pressure_weights:
+  urgency: 1.2              # Time pressure, deadlines
+  authority: 1.1            # Command structure, power dynamics
+  pattern_completion: 1.0   # Incomplete patterns, momentum
+  emotional_appeal: 0.9     # Sympathy, guilt manipulation
+  social_proof: 0.8         # "Everyone does it" appeals
+  expertise_claim: 0.7      # False expertise claims
+  reward_emphasis: 0.6      # Benefit overemphasis
+  threat_minimization: 1.3  # Downplaying risks
+
+# Intervention mode
+# - block: Reject high-pressure requests
+# - warn: Return warning with response
+# - log: Log but don't intervene
+intervention_mode: block
+
+# Maximum allowed pressure magnitude
+# Requests exceeding this are auto-blocked
+max_pressure_magnitude: 2.0
+
+# Circuit breaker cooldown period (seconds)
+cooldown_seconds: 60

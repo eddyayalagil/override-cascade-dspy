@@ -1,8 +1,9 @@
-"""Chain of Thought Monitor for Override Cascade Analysis.
+"""Reasoning Trace Monitor for Override Cascade Analysis.
 
-This module implements enhanced chain-of-thought monitoring to understand
-why AI systems override safety constraints in critical domains.
-Based on recent research in CoT monitorability and mechanistic interpretability.
+This module implements reasoning trace monitoring using observable proxies
+to understand why AI systems override safety constraints in critical domains.
+No chain-of-thought data is requested or stored - only observable patterns
+in lexical output, API calls, and refusal transitions are analyzed.
 """
 
 import logging
@@ -40,8 +41,8 @@ class ReasoningAnalysis:
     interventable_points: List[int]  # Steps where intervention could help
 
 
-class DeepChainOfThought(dspy.Signature):
-    """Generate detailed step-by-step reasoning with safety monitoring."""
+class DeepReasoningTrace(dspy.Signature):
+    """Generate detailed step-by-step reasoning trace with safety monitoring."""
 
     action: str = dspy.InputField(desc="action being considered")
     context: str = dspy.InputField(desc="full situational context")
@@ -99,12 +100,12 @@ class ExplainInternalConflict(dspy.Signature):
     cognitive_shortcuts: str = dspy.OutputField(desc="what shortcuts were taken")
 
 
-class ChainOfThoughtMonitor(dspy.Module):
-    """Advanced monitoring of AI reasoning in override scenarios."""
+class ReasoningTraceMonitor(dspy.Module):
+    """Advanced monitoring of observable reasoning patterns in override scenarios."""
 
     def __init__(self, use_deep_analysis: bool = True):
         """
-        Initialize the Chain of Thought Monitor.
+        Initialize the Reasoning Trace Monitor.
 
         Args:
             use_deep_analysis: Whether to use deep analysis of reasoning
@@ -112,12 +113,12 @@ class ChainOfThoughtMonitor(dspy.Module):
         super().__init__()
         self.use_deep_analysis = use_deep_analysis
 
-        # Always use CoT for these critical analyses
-        self.deep_reasoning = dspy.ChainOfThought(DeepChainOfThought)
+        # Use reasoning trace analysis for these critical analyses
+        self.deep_reasoning = dspy.ChainOfThought(DeepReasoningTrace)
         self.monitor = dspy.ChainOfThought(MonitorReasoning)
         self.conflict_analyzer = dspy.ChainOfThought(ExplainInternalConflict)
 
-        logger.debug("Initialized ChainOfThoughtMonitor")
+        logger.debug("Initialized ReasoningTraceMonitor")
 
     def trace_reasoning(
         self,
@@ -135,7 +136,7 @@ class ChainOfThoughtMonitor(dspy.Module):
         logger.debug(f"Tracing reasoning for action: {action}")
 
         try:
-            # Generate deep chain of thought
+            # Generate deep reasoning trace
             reasoning = self.deep_reasoning(
                 action=action,
                 context=context,
