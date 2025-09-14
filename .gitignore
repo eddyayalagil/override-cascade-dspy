@@ -55,6 +55,7 @@ data/
 *.csv
 *.json
 *.jsonl
+!benchmarks/frozen_scenarios.jsonl
 
 # Model checkpoints and artifacts
 checkpoints/
