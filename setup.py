@@ -10,7 +10,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="override-cascade-dspy",
-    version="0.2.0",
+    version="0.3.0",
     author="EvalOps Research Team",
     author_email="info@evalops.dev",
     description="A DSPy-based framework for detecting, measuring, and preventing safety override cascades in LLM systems.",
@@ -51,8 +51,9 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "override-cascade=override_cascade.main:main",
-            "oc-demo=override_cascade.main:demo_basic_usage",
+            "override-cascade=override_cascade_dspy.cli:main",
+            "ocd=override_cascade_dspy.cli:main",
+            "oc-demo=override_cascade_dspy.override_cascade.main:demo",
         ],
     },
 )
